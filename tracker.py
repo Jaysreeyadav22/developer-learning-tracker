@@ -112,35 +112,34 @@ class StudyTracker:
     
 
 
-  
+def main():
+    topic1 = Topic('OOP', 'Completed')
+    topic2 = Topic('Data Types', 'In Progress')
+    topic3 = Topic('Data Structures', 'Pending')
+    problemLog1 = ProblemLog('01-05-2026', 3, 'Easy')
+    problemLog2 = ProblemLog('02-05-2026', 2, 'Medium')
+    problemLog3 = ProblemLog('03-05-2026', 5, 'Hard') 
+    roadmap1 = RoadmapTask('OOP', 'Completed', '01-05-2026', 'High')
+    roadmap2 = RoadmapTask('Data Types', 'In Progress', '02-05-2026', 'Medium')
+    roadmap3 = RoadmapTask('Data Structures', 'Pending', '03-05-2026', 'Low')
+    tracker = StudyTracker(Topic, RoadmapTask, ProblemLog)
+    tracker.add_topic(topic1)
+    tracker.add_topic(topic2)
+    tracker.add_topic(topic3)
+    tracker.add_problem_log(problemLog1)
+    tracker.add_problem_log(problemLog2)
+    tracker.add_problem_log(problemLog3)
+    tracker.add_roadmap_task(roadmap1)
+    tracker.add_roadmap_task(roadmap2)
+    tracker.add_roadmap_task(roadmap3)
+    tracker.show_topics()
+    tracker.show_problem_logs() 
+    tracker.show_roadmap_tasks()
+    tracker.show_summary()
 
-topic1 = Topic('OOP', 'Completed')
-topic2 = Topic('Data Types', 'In Progress')
-topic3 = Topic('Data Structures', 'Pending')
-problemLog1 = ProblemLog('01-05-2026', 3, 'Easy')
-problemLog2 = ProblemLog('02-05-2026', 2, 'Medium')
-problemLog3 = ProblemLog('03-05-2026', 5, 'Hard') 
-roadmap1 = RoadmapTask('OOP', 'Completed', '01-05-2026', 'High')
-roadmap2 = RoadmapTask('Data Types', 'In Progress', '02-05-2026', 'Medium')
-roadmap3 = RoadmapTask('Data Structures', 'Pending', '03-05-2026', 'Low')
-tracker = StudyTracker(Topic, RoadmapTask, ProblemLog)
-tracker.add_topic(topic1)
-tracker.add_topic(topic2)
-tracker.add_topic(topic3)
-tracker.add_problem_log(problemLog1)
-tracker.add_problem_log(problemLog2)
-tracker.add_problem_log(problemLog3)
-tracker.add_roadmap_task(roadmap1)
-tracker.add_roadmap_task(roadmap2)
-tracker.add_roadmap_task(roadmap3)
-tracker.show_topics()
-tracker.show_problem_logs() 
-tracker.show_roadmap_tasks()
-tracker.show_summary()
-#broken = BrokenEntry()  
-print(problemLog1.get_problems_solved())
-problemLog1.set_problems_solved(-5)
-problemLog1.set_problems_solved(10)
-print(problemLog1.get_problems_solved())
+if __name__ == "__main__":
+    main()
+
+
 
 
